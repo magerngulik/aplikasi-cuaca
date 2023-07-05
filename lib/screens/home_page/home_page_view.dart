@@ -40,7 +40,6 @@ class _HomepageViewState extends State<HomepageView> {
     {"nama": "Ade gianti", "nim": "2013045"},
     {"nama": "Indi zhafitra", "nim": "2013007"},
     {"nama": "Muhammad aji", "nim": "2013075"},
-    {"nama": "Ahmda fauzi", "nim": "2013055"},
   ];
 
   @override

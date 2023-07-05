@@ -5,6 +5,7 @@ import 'package:perkiraan_cuaca/data/model/weather_model.dart';
 
 class WeatherServices {
   String baseUrl = "http://api.weatherapi.com/v1";
+  String keytoken = "99177a6f35934c48b7d124924230507";
 
   Future<Either<String, Weather>> getWeather() async {
     Position position = await Geolocator.getCurrentPosition();
@@ -12,8 +13,8 @@ class WeatherServices {
     var longitude = position.longitude;
 
     try {
-      final response = await Dio().get(
-          "$baseUrl/current.json?key=99177a6f35934c48b7d124924230507&q=$latitude,$longitude");
+      final response = await Dio()
+          .get("$baseUrl/current.json?key=$keytoken&q=$latitude,$longitude");
 
       return Right(Weather.fromJson(response.data));
     } catch (e) {
